@@ -1,0 +1,161 @@
+.product-detail-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+}
+
+.product-detail-container img {
+  width: 50%;
+  border-radius: 10px;
+}
+
+.product-detail-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.quantity-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.buy-now-btn, .add-to-cart-btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.buy-now-btn {
+  background-color: #ff4500;
+  color: white;
+}
+
+.add-to-cart-btn {
+  background-color: #008cba;
+  color: white;
+}
+
+.buy-now-btn:hover, .add-to-cart-btn:hover {
+  opacity: 0.9;
+}
+
+.product-reviews {
+  flex: 1;
+  flex-direction: column;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-top: 30px;
+}
+
+.product-reviews h3 {
+  margin-bottom: 20px;
+}
+
+.review-item {
+  flex-direction: column;
+  margin-bottom: 0px;
+  padding: 0px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  gap: 4px !important;
+}
+
+.review-item p {
+  margin:0;
+  padding: 0px;
+}
+
+.review-images img, .review-videos video {
+  max-width: 100px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.review-images, .review-videos {
+  margin-top: 0px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.add-review-btn {
+  padding: 10px 20px;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.add-review-btn:hover {
+  background-color: #218838;
+}
+
+
+.review-form-container {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.review-form-container h3 {
+  margin-bottom: 20px;
+}
+
+.review-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.review-form input[type="text"],
+.review-form textarea,
+.review-form input[type="number"],
+.review-form input[type="file"] {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.review-form textarea {
+  resize: vertical;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+  background-color: #0056b3;
+}
+
+.star {
+  color: #ddd; 
+  font-size: 20px;
+}
+
+.star.filled {
+  color: #f39c12;
+}
