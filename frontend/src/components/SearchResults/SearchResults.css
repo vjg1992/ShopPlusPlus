@@ -59,3 +59,49 @@
 .product-item a:hover {
     background-color: #218838;
 }
+
+@media (max-width: 1024px) {
+    .product-item {
+        width: calc(50% - 20px); 
+    }
+
+    .search-results-container {
+        padding: 15px;
+    }
+
+    .search-results-container h2 {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 375px) {
+    .product-list {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .product-item {
+        width: 100%; 
+        padding: 10px;
+    }
+
+    .search-results-container {
+        padding: 10px;
+    }
+
+    .search-results-container h2 {
+        font-size: 20px;
+    }
+
+    .product-item h3 {
+        font-size: 16px;
+    }
+
+    .product-item p {
+        font-size: 14px;
+    }
+
+    .product-item a {
+        padding: 8px 12px;
+    }
+}

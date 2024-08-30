@@ -156,16 +156,31 @@ const ProductDetail = ({ updateCartCount }) => {
           />
         </div>
         {product.StockQuantity > 0 ? (
-          <>
+          <div className='product-buttons'>
             <button onClick={handleBuyNow} className="buy-now-btn">Buy Now</button>
             <button onClick={handleAddToCart} className="add-to-cart-btn">Add to Cart</button>
             <button onClick={handleAddToWishlist} className="add-to-wishlist-btn">Add to Wishlist</button>
-          </>
+          </div>
         ) : (
           <p className="out-of-stock">This product is currently out of stock.</p>
         )}
       </div>
+      {!existingReview && !showReviewForm && (
+          <button onClick={() => setShowReviewForm(true)} className="add-review-btn">Add Review</button>
+        )}
 
+        {!existingReview && showReviewForm && (
+          <div className="review-form-wrapper">
+            <Review
+              productId={product.ProductID}
+              onReviewSubmit={() => {
+                setShowReviewForm(false);
+                fetchProductAndReview();
+              }}
+              onCancel={() => setShowReviewForm(false)}
+            />
+          </div>
+        )}
       <div className="product-reviews">
         <h3>Customer Reviews</h3>
         {reviews.length ? (
@@ -199,23 +214,6 @@ const ProductDetail = ({ updateCartCount }) => {
           ))
         ) : (
           <p>No reviews yet. Be the first to review!</p>
-        )}
-
-        {!existingReview && !showReviewForm && (
-          <button onClick={() => setShowReviewForm(true)} className="add-review-btn">Add Review</button>
-        )}
-
-        {!existingReview && showReviewForm && (
-          <div className="review-form-wrapper">
-            <Review
-              productId={product.ProductID}
-              onReviewSubmit={() => {
-                setShowReviewForm(false);
-                fetchProductAndReview();
-              }}
-              onCancel={() => setShowReviewForm(false)}
-            />
-          </div>
         )}
       </div>
     </div>

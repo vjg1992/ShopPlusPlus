@@ -1,51 +1,85 @@
 .checkout-container {
-    max-width: 800px;
-    margin: 0 auto;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 30px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+.order-summary {
+  margin-bottom: 30px;
+}
+
+.order-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-summary ul li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  font-size: 18px;
+  color: #555;
+}
+
+.payment-method {
+  margin-bottom: 30px;
+}
+
+.payment-method select {
+  padding: 12px;
+  font-size: 18px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.place-order-btn {
+  padding: 20px;
+  font-size: 22px;
+  color: white;
+  background-color: #007bff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease, transform 0.3s;
+}
+
+.place-order-btn:hover {
+  background-color: #64e53d;
+  transform: translateY(-2px);
+  color: black;
+  box-shadow: 0 6px 12px rgba(41, 128, 185, 0.2);
+}
+
+@media (max-width: 1024px) {
+  .checkout-container {
     padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    background-color: #f9f9f9;
   }
-  
-  .order-summary {
-    margin-bottom: 20px;
-  }
-  
-  .order-summary ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .order-summary ul li {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  
-  .payment-method {
-    margin-bottom: 20px;
-  }
-  
-  .payment-method select {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-  }
-  
-  .place-order-btn {
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
     padding: 15px;
+  }
+
+  .place-order-btn {
     font-size: 18px;
-    color: white;
-    background-color: #28a745;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    width: 100%;
-    transition: background-color 0.3s ease;
+    padding: 12px;
   }
-  
-  .place-order-btn:hover {
-    background-color: #218838;
+}
+
+@media (max-width: 375px) {
+  .checkout-container {
+    padding: 10px;
   }
-  
+
+  .place-order-btn {
+    font-size: 16px;
+    padding: 10px;
+  }
+}

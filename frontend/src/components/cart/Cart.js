@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { updateCartQuantity, removeCartItem } from './cartService';
 import { useNavigate, useLocation } from 'react-router-dom';
+import './Cart.css';
 
 const Cart = ({ updateCartCount }) => {
   const [cartItems, setCartItems] = useState([]);
