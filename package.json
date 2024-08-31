@@ -9,8 +9,7 @@
       "client": "npm start --prefix frontend",
       "dev": "concurrently \"npm run server\" \"npm run client\"",
       "server": "nodemon server.js",
-      "build": "npm run build --prefix frontend",
-      "heroku-postbuild": "npm run client-install && npm run build"
+      "build": "npm run build --prefix frontend"
     },
     "dependencies": {
       "bcrypt": "^5.1.1",
