@@ -18,7 +18,7 @@ const Wishlist = () => {
         return;
       }
       const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
-      const response = await fetch('${API_BASE_URL}/api/wishlist', {
+      const response = await fetch(`${API_BASE_URL}/api/wishlist`, {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
@@ -40,7 +40,7 @@ const Wishlist = () => {
   const removeFromWishlist = async (productId) => {
     try {
       const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
-      await fetch('${API_BASE_URL}/api/wishlist/remove', {
+      await fetch(`${API_BASE_URL}/api/wishlist/remove`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const Wishlist = () => {
   const handleAddToCart = async (product) => {
     try {
       const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
-      const response = await fetch('${API_BASE_URL}/api/cart/add', {
+      const response = await fetch(`${API_BASE_URL}/api/cart/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

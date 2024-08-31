@@ -12,7 +12,7 @@ const Checkout = () => {
     const fetchCartItems = async () => {
       try {
         const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
-        const response = await fetch('${API_BASE_URL}/api/cart', {
+        const response = await fetch(`${API_BASE_URL}/api/cart`, {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
           },
@@ -40,7 +40,7 @@ const Checkout = () => {
   const handlePlaceOrder = async () => {
     try {
       const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
-      const response = await fetch('${API_BASE_URL}/api/orders/create', {
+      const response = await fetch(`${API_BASE_URL}/api/orders/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
