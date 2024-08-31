@@ -35,7 +35,8 @@ const AccountInfo = () => {
 
     const fetchUserDetails = async () => {
       try {
-        const response = await fetch('http://localhost:8001/api/users/me', {
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+        const response = await fetch('${API_BASE_URL}/api/users/me', {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${token}`
@@ -83,8 +84,9 @@ const AccountInfo = () => {
 
   const handleSave = async () => {
     try {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
       const token = localStorage.getItem('token');
-      const response = await fetch('http://localhost:8001/api/users/me', {
+      const response = await fetch('${API_BASE_URL}/api/users/me', {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',

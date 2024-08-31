@@ -9,7 +9,8 @@ const OrderDetails = () => {
     useEffect(() => {
         const fetchOrderDetails = async () => {
             try {
-                const response = await fetch(`http://localhost:8001/api/orders/${id}`, {
+                const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+                const response = await fetch(`${API_BASE_URL}/api/orders/${id}`, {
                     headers: {
                         'Authorization': `Bearer ${localStorage.getItem('token')}`,
                     },

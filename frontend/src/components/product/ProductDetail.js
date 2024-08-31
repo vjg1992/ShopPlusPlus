@@ -15,7 +15,8 @@ const ProductDetail = ({ updateCartCount }) => {
 
   const fetchProductAndReview = async () => {
     try {
-      const productResponse = await fetch(`http://localhost:8001/api/products/${id}`);
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+      const productResponse = await fetch(`${API_BASE_URL}/api/products/${id}`);
       if (!productResponse.ok) {
         throw new Error('Failed to fetch product');
       }
@@ -25,7 +26,7 @@ const ProductDetail = ({ updateCartCount }) => {
       const token = localStorage.getItem('token');
       const headers = token ? { 'Authorization': `Bearer ${token}` } : {};
 
-      const reviewResponse = await fetch(`http://localhost:8001/api/reviews/product/${productData.ProductID}`, {
+      const reviewResponse = await fetch(`${API_BASE_URL}/api/reviews/product/${productData.ProductID}`, {
         headers: headers
       });
 
@@ -55,7 +56,8 @@ const ProductDetail = ({ updateCartCount }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:8001/api/cart/add', {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+      const response = await fetch('${API_BASE_URL}/api/cart/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -89,7 +91,8 @@ const ProductDetail = ({ updateCartCount }) => {
     }
 
     try {
-      const response = await fetch('http://localhost:8001/api/wishlist/add', {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+      const response = await fetch('${API_BASE_URL}/api/wishlist/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -135,7 +138,7 @@ const ProductDetail = ({ updateCartCount }) => {
   };
 
   if (!product) return <div>Loading...</div>;
-
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
   return (
     <div className="product-detail-container">
       <img src={product.Images[0]} alt={product.ProductName} />
@@ -196,7 +199,7 @@ const ProductDetail = ({ updateCartCount }) => {
                   {review.images && review.images.length > 0 && (
                     <div className="review-images">
                       {review.images.map((image, index) => (
-                        <img key={index} src={`http://localhost:8001${image}`} alt={`Review Image ${index + 1}`} />
+                        <img key={index} src={`${API_BASE_URL}${image}`} alt={`Review Image ${index + 1}`} />
                       ))}
                     </div>
                   )}
@@ -204,7 +207,7 @@ const ProductDetail = ({ updateCartCount }) => {
                   {review.videos && review.videos.length > 0 && (
                     <div className="review-videos">
                       {review.videos.map((video, index) => (
-                        <video key={index} controls src={`http://localhost:8001${video}`} />
+                        <video key={index} controls src={`${API_BASE_URL}${video}`} />
                       ))}
                     </div>
                   )}

@@ -15,7 +15,8 @@ const MyReviews = () => {
       }
 
       try {
-        const response = await fetch('http://localhost:8001/api/reviews/user', {
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+        const response = await fetch(`${API_BASE_URL}/api/reviews/user`, {
           headers: {
             'Authorization': `Bearer ${token}`,
           },
@@ -40,7 +41,7 @@ const MyReviews = () => {
       <span key={i} className={i < rating ? 'star filled' : 'star'}>&#9733;</span>
     ));
   };
-
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
   return (
     <div className="my-reviews-container">
       <h2>My Reviews</h2>
@@ -58,7 +59,7 @@ const MyReviews = () => {
               {review.images && review.images.length > 0 && (
                 <div className="review-images">
                   {review.images.map((image, index) => (
-                    <img key={index} src={`http://localhost:8001${image}`} alt={`Review Image ${index + 1}`} />
+                    <img key={index} src={`${API_BASE_URL}${image}`} alt={`Review Image ${index + 1}`} />
                   ))}
                 </div>
               )}
@@ -66,7 +67,7 @@ const MyReviews = () => {
               {review.videos && review.videos.length > 0 && (
                 <div className="review-videos">
                   {review.videos.map((video, index) => (
-                    <video key={index} controls src={`http://localhost:8001${video}`} />
+                    <video key={index} controls src={`${API_BASE_URL}${video}`} />
                   ))}
                 </div>
               )}

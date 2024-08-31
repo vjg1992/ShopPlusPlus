@@ -20,7 +20,8 @@ const Navbar = ({ userName, cartItemCount, updateCartCount }) => {
 
   const fetchCartData = async (token) => {
     try {
-      const response = await fetch('http://localhost:8001/api/cart', {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+      const response = await fetch('${API_BASE_URL}/api/cart', {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
@@ -60,7 +61,8 @@ const Navbar = ({ userName, cartItemCount, updateCartCount }) => {
 
     if (query.length > 2) {
       try {
-        const response = await fetch(`http://localhost:8001/api/products/suggestions?query=${query}`);
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+        const response = await fetch(`${API_BASE_URL}/api/products/suggestions?query=${query}`);
         if (response.ok) {
           const data = await response.json();
           setSuggestions(data);

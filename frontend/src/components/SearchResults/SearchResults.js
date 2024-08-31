@@ -10,7 +10,8 @@ const SearchResults = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`http://localhost:8001/api/products/search?query=${query}`);
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+        const response = await fetch(`${API_BASE_URL}/api/products/search?query=${query}`);
         if (response.ok) {
           const data = await response.json();
           setProducts(data);

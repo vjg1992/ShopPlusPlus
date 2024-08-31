@@ -11,7 +11,8 @@ const Checkout = () => {
   useEffect(() => {
     const fetchCartItems = async () => {
       try {
-        const response = await fetch('http://localhost:8001/api/cart', {
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+        const response = await fetch('${API_BASE_URL}/api/cart', {
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
           },
@@ -38,7 +39,8 @@ const Checkout = () => {
 
   const handlePlaceOrder = async () => {
     try {
-      const response = await fetch('http://localhost:8001/api/orders/create', {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+      const response = await fetch('${API_BASE_URL}/api/orders/create', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

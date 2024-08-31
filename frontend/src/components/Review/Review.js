@@ -51,8 +51,8 @@ const Review = ({ productId, onReviewSubmit, onCancel }) => {
       for (const file of review.videos) {
         formData.append('videos', file);
       }
-
-      const response = await fetch('http://localhost:8001/api/reviews/add', {
+      const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+      const response = await fetch('${API_BASE_URL}/api/reviews/add', {
         method: 'POST',
         headers: {
           'Authorization': `Bearer ${token}`

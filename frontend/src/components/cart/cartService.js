@@ -1,5 +1,6 @@
 export const updateCartQuantity = async (productId, quantity, productModel) => {
-    const response = await fetch(`http://localhost:8001/api/cart/update`, {
+  const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';  
+  const response = await fetch(`${API_BASE_URL}/api/cart/update`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json',
@@ -16,7 +17,8 @@ export const updateCartQuantity = async (productId, quantity, productModel) => {
   };
   
   export const removeCartItem = async (productId, productModel) => {
-    const response = await fetch(`http://localhost:8001/api/cart/remove`, {
+    const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+    const response = await fetch(`${API_BASE_URL}/api/cart/remove`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',

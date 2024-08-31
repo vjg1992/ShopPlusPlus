@@ -50,7 +50,8 @@ const Login = ({ updateCartCount }) => {
       });
     } else {
       try {
-        const res = await fetch("http://localhost:8001/api/users/login", {
+        const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+        const res = await fetch(`${API_BASE_URL}/api/users/login`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -84,7 +85,8 @@ const Login = ({ updateCartCount }) => {
           }, 100);
           if (responseData.name) {
             try {
-              const cartResponse = await fetch('http://localhost:8001/api/cart', {
+              const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
+              const cartResponse = await fetch(`${API_BASE_URL}/api/cart`, {
                 headers: {
                   'Authorization': `Bearer ${responseData.token}`,
                 },
