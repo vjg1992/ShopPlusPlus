@@ -24,8 +24,22 @@ Serve the frontend: Make sure the React build files are in the backend/public fo
 
 Access the website: Open your browser and go to http://localhost:8001.
 
+<<<<<<< HEAD
 Using the Website Sign Up and Log In: Create an account or log in with your email and password. Browse Products: Explore different categories and use search bar to find products. Manage Cart and Wishlist: Add products to your wishlist or cart and proceed to checkout or Buy Now Checkout.
 
 Contributing If you want to contribute to this project, you can fork the repository and submit a pull request with your changes.
 
 License This project is licensed under the MIT License. See the LICENSE file for details.
+=======
+Using the Website
+Sign Up and Log In: Create an account or log in with your email and password.
+Browse Products: Explore different categories and use search bar to find products.
+Manage Cart and Wishlist: Add products to your wishlist or cart and proceed to checkout or Buy Now Checkout.
+
+
+Contributing
+If you want to contribute to this project, you can fork the repository and submit a pull request with your changes.
+
+License
+This project is licensed under the MIT License. See the LICENSE file for details.
+>>>>>>> 66daf33bdf5fcedc21645ff8656362bb3f78d120
