@@ -244,18 +244,8 @@
 
 @media (max-width: 375px) { 
   .navbar {
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: block; 
     padding: 10px;
-  }
-
-  .main_div {
-    display: flex;
-    flex-direction: column; 
-    flex-wrap: wrap !important;
-    width: 100%; 
-    justify-content: center;
-    align-items: center; 
   }
 
   .main_logo_div,
