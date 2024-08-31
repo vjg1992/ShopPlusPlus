@@ -260,9 +260,7 @@
 
   .main_logo_div,
   .side_logo {
-    display: flex;
-    flex-direction: column; 
-    flex-wrap: wrap !important;
+    display: block; 
     width: 100%;
     justify-content: center;
   }
