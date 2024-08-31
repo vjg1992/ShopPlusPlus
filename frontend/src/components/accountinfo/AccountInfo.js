@@ -44,11 +44,12 @@ const AccountInfo = () => {
         });
 
         if (!response.ok) {
-          const errorText = await response.text(); 
+          // Handle the error case
+          const errorText = await response.text(); // Get the error message
           throw new Error(`Error ${response.status}: ${errorText}`);
         }
 
-        const data = await response.json(); 
+        const data = await response.json(); // Parse the response as JSON
         setUserDetails(data);
       } catch (error) {
         console.error('Error fetching user details:', error);
@@ -58,6 +59,7 @@ const AccountInfo = () => {
 
     fetchUserDetails();
   }, [navigate]);
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
