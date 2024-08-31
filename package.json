@@ -1,7 +1,7 @@
 {
     "name": "shopplusplus",
     "version": "1.0.0",
-    "main": "index.js",
+    "main": "backend/server.js",
     "private": true,
     "scripts": {
       "start": "node index.js",
