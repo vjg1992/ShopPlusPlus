@@ -43,14 +43,12 @@ const AccountInfo = () => {
           }
         });
 
-        const responseText = await response.text();
-        console.log('Response Text:', responseText);
-
         if (!response.ok) {
-          throw new Error(`Error ${response.status}: ${responseText}`);
+          const errorText = await response.text(); 
+          throw new Error(`Error ${response.status}: ${errorText}`);
         }
 
-        const data = JSON.parse(responseText); 
+        const data = await response.json(); 
         setUserDetails(data);
       } catch (error) {
         console.error('Error fetching user details:', error);
