@@ -251,6 +251,7 @@
 
   .main_logo_div,
   .side_logo {
+    flex-wrap: wrap;
     width: 100%;
     justify-content: center;
   }
