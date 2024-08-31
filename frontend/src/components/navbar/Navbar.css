@@ -250,7 +250,7 @@
 
   .main_logo_div,
   .side_logo {
-    display: block; 
+    display: block !important; 
     width: 100%;
     justify-content: center;
   }
