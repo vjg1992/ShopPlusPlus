@@ -245,6 +245,7 @@
 @media (max-width: 375px) { 
   .navbar {
     flex-direction: column;
+    flex-wrap: wrap;
     padding: 10px;
   }
 
