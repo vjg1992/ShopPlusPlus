@@ -27,7 +27,7 @@ function App() {
     const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'http://localhost:8001';
     const token = localStorage.getItem('token');
     if (token) {
-      fetch('${API_BASE_URL}/api/users/me', {
+      fetch(`${API_BASE_URL}/api/users/me`, {
         headers: {
           'Authorization': `Bearer ${token}`,
         },
