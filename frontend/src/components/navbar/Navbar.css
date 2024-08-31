@@ -252,7 +252,7 @@
   .main_div {
     display: flex;
     flex-direction: column; 
-    flex-wrap: wrap;
+    flex-wrap: wrap !important;
     width: 100%; 
     justify-content: center;
     align-items: center; 
