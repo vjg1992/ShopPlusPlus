@@ -3,39 +3,6 @@ const { validationResult } = require('express-validator');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
-const registerUser = async (req, res) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(422).json({ errors: errors.array() });
-  }
-
-  const { name, email, mobile, password, confirm_password } = req.body;
-
-  if (password !== confirm_password) {
-    return res.status(422).json({ error: 'Passwords do not match' });
-  }
-
-  try {
-    let user = await User.findOne({ $or: [{ email }, { mobile }] });
-    if (user) {
-      return res.status(422).json({ error: 'User with this email or mobile number already exists' });
-    }
-
-    user = new User({
-      name,
-      email,
-      mobile,
-      password
-    });
-
-    await user.save();
-    res.status(201).json({ message: 'Registration successful' });
-  } catch (err) {
-    console.error(err.message);
-    res.status(500).send('Server error');
-  }
-};
-
 const loginUser = async (req, res) => {
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
@@ -126,4 +93,4 @@ const updateUserAddress = async (req, res) => {
   }
 };
 
-module.exports = { registerUser, loginUser, getUserDetails, updateUserDetails, updateUserAddress };
+module.exports = { loginUser, getUserDetails, updateUserDetails, updateUserAddress };
