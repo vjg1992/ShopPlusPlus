@@ -260,9 +260,9 @@ const AccountInfo = () => {
           ))
         )}
         <button onClick={handleAddAddress}>+ Add Address</button>
-      </div>
-      <br />
+      <br /> <br />
       {isChanged && <button onClick={handleSave}>Save</button>}
+      </div>
       <ToastContainer />
     </div>
   );
