@@ -18,6 +18,7 @@ import SearchResults from './components/SearchResults/SearchResults';
 import OrderHistory from './components/orderHistory/OrderHistory';
 import OrderDetails from './components/orderDetails/OrderDetails';
 import MyReviews from './components/MyReviews/MyReviews';
+import Footer from './components/footer/Footer';
 
 function App() {
   const [userName, setUserName] = useState('');
@@ -70,6 +71,7 @@ function App() {
         <Route path="/order/:id" element={<OrderDetails />} />
         <Route path="/my-reviews" element={<MyReviews />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

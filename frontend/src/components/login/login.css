@@ -5,9 +5,11 @@ section {
     top: 150px;
     min-height: 600px;
     background: linear-gradient(to right, #f8f9fa, #e9ecef);
+    padding-bottom: 200px;
 }
 
 .login_container {
+    min-height: auto;
     width: 85%;
     margin: auto;
     display: flex;
